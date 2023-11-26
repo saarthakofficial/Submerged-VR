@@ -21,6 +21,7 @@ public class Swimmer : MonoBehaviour
     Rigidbody rb;
     [SerializeField] DynamicMoveProvider moveProvider;
     [SerializeField] CharacterController cc;
+    [SerializeField] CapsuleCollider collider;
     float cooldownTimer;
 
     void Awake()
@@ -85,11 +86,13 @@ public class Swimmer : MonoBehaviour
     void SurfaceControl(){
         rb.useGravity = false;
         cc.enabled = true;
+        collider.isTrigger = true;
         moveProvider.enabled = true;
     }
 
     void UnderwaterControl(){
         cc.enabled = false;
+        collider.isTrigger = false;
         moveProvider.enabled = false;
         rb.useGravity = true;
     }
