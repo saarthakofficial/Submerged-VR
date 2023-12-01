@@ -22,6 +22,13 @@ public class Swimmer : MonoBehaviour
     [SerializeField] DynamicMoveProvider moveProvider;
     [SerializeField] CharacterController cc;
     [SerializeField] CapsuleCollider collider;
+    [SerializeField] AudioSource bgm;
+    [SerializeField] AudioLowPassFilter lowPassFilter;
+    [SerializeField] AudioSource ambience;
+    [SerializeField] AudioClip surfaceAmbience;
+    [SerializeField] AudioClip underwaterAmbience;
+    [SerializeField] AudioSource sfx;
+    [SerializeField] AudioClip dive;
     float cooldownTimer;
 
     void Awake()
@@ -33,9 +40,21 @@ public class Swimmer : MonoBehaviour
     {
             if (transform.position.y < maxSwimHeight){
                 rb.useGravity = false;
+                ambience.clip = underwaterAmbience;
+                ambience.volume = 0.85f;
+                lowPassFilter.cutoffFrequency = 4500;
             }
             else{
                 rb.useGravity = true;
+                ambience.clip = surfaceAmbience;
+                ambience.volume = 0.75f;
+                lowPassFilter.cutoffFrequency = 10000;
+            }
+            if (!ambience.isPlaying){
+                ambience.Play();
+            }
+            if ((transform.position.y > maxSwimHeight - 1f) && (transform.position.y < maxSwimHeight + 1f) && !sfx.isPlaying){
+                sfx.PlayOneShot(dive);
             }
 
             cooldownTimer += Time.fixedDeltaTime;
@@ -50,18 +69,14 @@ public class Swimmer : MonoBehaviour
                 {
                     Vector3 worldVelocity = trackingTransform.TransformDirection(localVelocity);
 
-                    // Separate the horizontal and vertical components
                     Vector3 horizontalVelocity = new Vector3(worldVelocity.x, 0, worldVelocity.z);
                     Vector3 verticalVelocity = new Vector3(0, worldVelocity.y, 0);
 
-                    // Check if the player is below the maximum swim height for vertical movement
                     if (transform.position.y < maxSwimHeight)
                     {
                         rb.AddForce(verticalVelocity * swimForce, ForceMode.Acceleration);  
                     }
 
-
-                    // Always apply the vertical force for buoyancy
                         rb.AddForce(horizontalVelocity * swimForce, ForceMode.Acceleration);
 
                     cooldownTimer = 0f;
@@ -81,16 +96,19 @@ public class Swimmer : MonoBehaviour
         if (other.gameObject.tag == "Dive"){
             UnderwaterControl();
         }
+
     }
 
-    void SurfaceControl(){
+
+
+    public void SurfaceControl(){
         rb.useGravity = false;
         cc.enabled = true;
         collider.isTrigger = true;
         moveProvider.enabled = true;
     }
 
-    void UnderwaterControl(){
+    public void UnderwaterControl(){
         cc.enabled = false;
         collider.isTrigger = false;
         moveProvider.enabled = false;

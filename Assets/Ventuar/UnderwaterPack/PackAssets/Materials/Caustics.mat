@@ -62,7 +62,7 @@ Material:
     - _CausticsBlending: 50
     - _CausticsIntensity: 1.5
     - _CausticsStartLevel: -40
-    - _Glossiness: 0.15
+    - _Glossiness: 0.5
     - _Metallic: 0
     - _QueueControl: 0
     - _QueueOffset: 0
