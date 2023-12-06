@@ -42,7 +42,7 @@ public class Swimmer : MonoBehaviour
                 rb.useGravity = false;
                 ambience.clip = underwaterAmbience;
                 ambience.volume = 0.85f;
-                lowPassFilter.cutoffFrequency = 4500;
+                lowPassFilter.cutoffFrequency = 4000;
             }
             else{
                 rb.useGravity = true;
