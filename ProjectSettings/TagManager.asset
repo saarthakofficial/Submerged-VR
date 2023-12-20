@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Water
   - Surface
+  - Dive
+  - Interactor
+  - FxTemporaire
+  - Amulet
   layers:
   - Default
   - TransparentFX
@@ -16,7 +20,7 @@ TagManager:
   - Volume
   - 
   - Fish
-  - 
+  - Hands
   - 
   - 
   - 

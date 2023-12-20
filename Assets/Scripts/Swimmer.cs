@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.TextCore.Text;
@@ -12,11 +14,12 @@ public class Swimmer : MonoBehaviour
     [SerializeField] float dragForce = 1f;
     [SerializeField] float minForce;
     [SerializeField] float minTimeBetweenStrokes;
-    [SerializeField] float maxSwimHeight = 5f; // Adjust this value to set the maximum swim height
+    [SerializeField] float maxSwimHeight = 5f;
     [SerializeField] InputActionReference leftControllerSwimReference;
     [SerializeField] InputActionReference leftControllerVelocity;
     [SerializeField] InputActionReference rightControllerSwimReference;
     [SerializeField] InputActionReference rightControllerVelocity;
+    [SerializeField] InputActionReference bButtonReference;
     [SerializeField] Transform trackingTransform;
     Rigidbody rb;
     [SerializeField] DynamicMoveProvider moveProvider;
@@ -30,6 +33,7 @@ public class Swimmer : MonoBehaviour
     [SerializeField] AudioSource sfx;
     [SerializeField] AudioClip dive;
     float cooldownTimer;
+    public bool grabbing = false;
 
     void Awake()
     {
@@ -87,6 +91,27 @@ public class Swimmer : MonoBehaviour
             {
                 rb.AddForce(-rb.velocity * dragForce, ForceMode.Acceleration);
             }
+
+            if (GameManager.instance.map != null && grabbing == false){
+                if (bButtonReference.action.IsPressed()){
+                    if (!GameManager.instance.map.activeInHierarchy){
+                        GameManager.instance.map.SetActive(true);
+                    }
+                }
+                else
+                {
+                    GameManager.instance.map.SetActive(false);
+                }
+            }
+            
+    }
+
+    public void DelayedFalsifyGrabbing(){
+        Invoke("FalsifyGrabbing", 1.5f);
+    }
+
+    public void FalsifyGrabbing(){
+        grabbing = false;
     }
 
     private void OnTriggerEnter(Collider other) {

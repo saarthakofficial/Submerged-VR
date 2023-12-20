@@ -1,0 +1,373 @@
+fileFormatVersion: 2
+guid: 0c3b6dfa0854d5f4fa866c09570ca4c3
+ModelImporter:
+  serializedVersion: 22103
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Base.001
+    second: {fileID: 2100000, guid: e3a84242f790b9f40a2d9d30c4ce2c6f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Chest1
+    second: {fileID: 2100000, guid: 4ce7dd55a98818846afee912b4a9878d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Design A.001
+    second: {fileID: 2100000, guid: 7fd1ed0d19b2e854ab8ee30e242d7ffe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Design B.001
+    second: {fileID: 2100000, guid: 97bb95036f7ca6840afa2cc7a6068fd2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Diamonds
+    second: {fileID: 2100000, guid: 9dff14f50b3cbe84784e4cd293295c43, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gold.001
+    second: {fileID: 2100000, guid: 222b0eb5f6ae9a74ba59b79016f37b02, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gold1
+    second: {fileID: 2100000, guid: e87024271ca48e44987d4ee55c976e56, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: e77047b02b387bd40874e92490b2fa39, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal.001
+    second: {fileID: 2100000, guid: 98af90bafac94df44ba49f420b59b370, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rusty Gold.001
+    second: {fileID: 2100000, guid: fad00cefd6fcaa045a08f4c584f06602, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Skull
+    second: {fileID: 2100000, guid: 58fc54c7991f93042bb2ea920c3d7d70, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rusty metal.001
+    second: {fileID: 2100000, guid: e739cc65d1248014abd06237ab09b6ef, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: (null)_Base_Color
+    second: {fileID: 2800000, guid: 160a0ba931e64a845bdcf78a739937e9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: (null)_Metallic
+    second: {fileID: 2800000, guid: d630a6ccae07b384dbd67e3da8a9015e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: (null)_Normal_OpenGL
+    second: {fileID: 2800000, guid: 2200331a7cc46674085aa60e7c9b7c24, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: (null)_Roughness
+    second: {fileID: 2800000, guid: 1300b0bdab81b814398fd047d203372f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Base_Base_Color
+    second: {fileID: 2800000, guid: fab4e5d0cd60c4a459216ebf880e2747, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Base_Metallic
+    second: {fileID: 2800000, guid: d06611b0eb1d79e4b8a6ba791655d33d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Base_Normal_OpenGL
+    second: {fileID: 2800000, guid: 376fca04c2091ed47ab0c684b4bb4ee9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Base_Roughness
+    second: {fileID: 2800000, guid: 759cf6069f4c903478b180e376818a71, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ChestLowPoly_lambert1_BaseColor
+    second: {fileID: 2800000, guid: 1c8381db750be2143892882781d27f08, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ChestLowPoly_lambert1_Metallic
+    second: {fileID: 2800000, guid: 39b1dba7c4d012340b60859d62068ca7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ChestLowPoly_lambert1_Normal
+    second: {fileID: 2800000, guid: 3211538a63f630b4f80fe8fe0a9fe74c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ChestLowPoly_lambert1_Roughness
+    second: {fileID: 2800000, guid: c8fd1df48bcfcae4ba6a3b2020e95a13, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Design A_Base_Color
+    second: {fileID: 2800000, guid: 9e2c195e685af3444b8a1c7805d83e58, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Design A_Metallic
+    second: {fileID: 2800000, guid: 01cb5f5e7c0939549a0701b371fc909c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Design A_Normal_OpenGL
+    second: {fileID: 2800000, guid: 203f3107fb8b89b48b0bb2d65e01670e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Design A_Roughness
+    second: {fileID: 2800000, guid: 0f5b257ab0e7208429e42a27643eb63d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Design B_Base_Color
+    second: {fileID: 2800000, guid: 8eb57cea4e1509641b828f54b73120e5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Design B_Metallic
+    second: {fileID: 2800000, guid: da142505daab01b4d9fab67ed8d484c2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Design B_Normal_OpenGL
+    second: {fileID: 2800000, guid: ffc922a64a01a8a43b592a8aa7bf52a2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Design B_Roughness
+    second: {fileID: 2800000, guid: 3215f6cd14a2a4b41adca8fe3409aeac, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Gold_Base_Color
+    second: {fileID: 2800000, guid: d9a0c9c142e3e4e419774d2250d9867b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Gold_Metallic
+    second: {fileID: 2800000, guid: a0ee06905200e9a42ba27e04dd0e1fe5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Gold_Roughness
+    second: {fileID: 2800000, guid: fdf7088e9f9b98e49ba31c9627c717f6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Metal_Metallic
+    second: {fileID: 2800000, guid: 1249f0918599b52419d3a651fc62874d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Metal_Normal_OpenGL
+    second: {fileID: 2800000, guid: 05d3b52844e048641aa7746378bc1779, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Metal_Roughness
+    second: {fileID: 2800000, guid: e08dddb89b4228144821e2666a360df4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Rusty Gold_Base_Color
+    second: {fileID: 2800000, guid: a3db35ec048cd2446bd0f5eaa4c72506, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Rusty Gold_Metallic
+    second: {fileID: 2800000, guid: 7ec0f5a350fbf9444ab58a2c9084dd9d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Rusty Gold_Normal_OpenGL
+    second: {fileID: 2800000, guid: 576288d685c133b478bb02fb9444a140, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Rusty Gold_Roughness
+    second: {fileID: 2800000, guid: 9a8ae362afb167641bb62305ca13dd65, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: coin_lambert2_BaseColor
+    second: {fileID: 2800000, guid: abc521e4d7a4d7a4aab01b1017ccd0e2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: coin_lambert2_Metallic
+    second: {fileID: 2800000, guid: ba73a636f5c327e4a88862b41f71382f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: coin_lambert2_Roughness
+    second: {fileID: 2800000, guid: 55bd7cc49e9a3a44aa3f3c8386fbf358, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: diamond_lambert1_BaseColor
+    second: {fileID: 2800000, guid: 2383f8333a11a1f4d9362ad973e26f3e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: diamond_lambert1_Emissive
+    second: {fileID: 2800000, guid: aaa3426b3c401ab4a8ec791e82cf82a9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: diamond_lambert1_Roughness
+    second: {fileID: 2800000, guid: 42ee9206f8d63714e8120a9095b3b6e0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: metal2
+    second: {fileID: 2800000, guid: 24368b3c320eea74da64b775d5438862, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: rusty metal_Base_Color
+    second: {fileID: 2800000, guid: 3893bbca224f6ab45bd88476a17d08bb, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: rusty metal_Metallic
+    second: {fileID: 2800000, guid: 3a92b2fdd4c67c34ba88c3c891841a43, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: rusty metal_Normal_OpenGL
+    second: {fileID: 2800000, guid: 483dea0489ebddf4ea646cfc3c30fbaa, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: rusty metal_Roughness
+    second: {fileID: 2800000, guid: f2770da2750146543a7a4fac3b64be09, type: 3}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.3
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 0.003
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
