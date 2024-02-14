@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Threading;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Rendering;
-using UnityEngine.Rendering.Universal;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Transformers;
 
@@ -32,6 +30,7 @@ public class GameManager : MonoBehaviour
     void Awake(){
         instance = this;
     }
+    
     
     void Start()
     {
@@ -70,6 +69,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void SelectRandomSpawners(ItemType itemType){
+        chosenItemSpawners.Clear();
         int totalSpawners = 3;
         while (totalSpawners > 0){
             int randomSpawner = Random.Range(0, totalItemSpawners.Count);
