@@ -48,7 +48,7 @@ public class Crafter : MonoBehaviour
 
     void Update() {
         if (popUpText.gameObject.activeInHierarchy){
-            popUpText.transform.LookAt(-Camera.main.transform);
+            popUpText.transform.LookAt(-Camera.main.transform.position);
         }
     }
 }

@@ -13,6 +13,7 @@ public class Swimmer : MonoBehaviour
     [SerializeField] float swimForce = 2f;
     [SerializeField] float dragForce = 1f;
     [SerializeField] float minForce;
+    [SerializeField] float maxSpeed;
     [SerializeField] float minTimeBetweenStrokes;
     [SerializeField] float maxSwimHeight = 5f;
     [SerializeField] InputActionReference leftControllerSwimReference;
@@ -42,83 +43,97 @@ public class Swimmer : MonoBehaviour
 
     void FixedUpdate()
     {
-            if (transform.position.y < maxSwimHeight){
-                rb.useGravity = false;
-                ambience.clip = underwaterAmbience;
-                ambience.volume = 0.85f;
-                lowPassFilter.cutoffFrequency = 4000;
-            }
-            else{
-                rb.useGravity = true;
-                ambience.clip = surfaceAmbience;
-                ambience.volume = 0.75f;
-                lowPassFilter.cutoffFrequency = 10000;
-            }
-            if (!ambience.isPlaying){
-                ambience.Play();
-            }
-            if ((transform.position.y > maxSwimHeight - 1f) && (transform.position.y < maxSwimHeight + 1f) && !sfx.isPlaying){
-                sfx.PlayOneShot(dive);
-            }
+        if (transform.position.y < maxSwimHeight)
+        {
+            rb.useGravity = false;
+            ambience.clip = underwaterAmbience;
+            ambience.volume = 0.85f;
+            lowPassFilter.cutoffFrequency = 4000;
+        }
+        else
+        {
+            rb.useGravity = true;
+            ambience.clip = surfaceAmbience;
+            ambience.volume = 0.75f;
+            lowPassFilter.cutoffFrequency = 10000;
+        }
+        if (!ambience.isPlaying)
+        {
+            ambience.Play();
+        }
+        if ((transform.position.y > maxSwimHeight - 1f) && (transform.position.y < maxSwimHeight + 1f) && !sfx.isPlaying)
+        {
+            sfx.PlayOneShot(dive);
+        }
 
-            cooldownTimer += Time.fixedDeltaTime;
-            if (cooldownTimer > minTimeBetweenStrokes && leftControllerSwimReference.action.IsPressed() && rightControllerSwimReference.action.IsPressed())
+        cooldownTimer += Time.fixedDeltaTime;
+        if (cooldownTimer > minTimeBetweenStrokes && leftControllerSwimReference.action.IsPressed() && rightControllerSwimReference.action.IsPressed())
+        {
+            var leftHandVelocity = leftControllerVelocity.action.ReadValue<Vector3>();
+            var rightHandVelocity = rightControllerVelocity.action.ReadValue<Vector3>();
+            Vector3 localVelocity = leftHandVelocity + rightHandVelocity;
+            localVelocity *= -1;
+
+            if (localVelocity.sqrMagnitude > minForce * minForce)
             {
-                var leftHandVelocity = leftControllerVelocity.action.ReadValue<Vector3>();
-                var rightHandVelocity = rightControllerVelocity.action.ReadValue<Vector3>();
-                Vector3 localVelocity = leftHandVelocity + rightHandVelocity;
-                localVelocity *= -1;
+                Vector3 worldVelocity = trackingTransform.TransformDirection(localVelocity);
 
-                if (localVelocity.sqrMagnitude > minForce * minForce)
+                Vector3 horizontalVelocity = new Vector3(worldVelocity.x, 0, worldVelocity.z);
+                Vector3 verticalVelocity = new Vector3(0, worldVelocity.y, 0);
+
+                if (transform.position.y < maxSwimHeight)
                 {
-                    Vector3 worldVelocity = trackingTransform.TransformDirection(localVelocity);
-
-                    Vector3 horizontalVelocity = new Vector3(worldVelocity.x, 0, worldVelocity.z);
-                    Vector3 verticalVelocity = new Vector3(0, worldVelocity.y, 0);
-
-                    if (transform.position.y < maxSwimHeight)
-                    {
-                        rb.AddForce(verticalVelocity * swimForce, ForceMode.Acceleration);  
-                    }
-
-                        rb.AddForce(horizontalVelocity * swimForce, ForceMode.Acceleration);
-
-                    cooldownTimer = 0f;
+                    rb.AddForce(verticalVelocity * swimForce, ForceMode.Acceleration);
                 }
-            }
 
-            if (rb.velocity.sqrMagnitude > 0.01f)
+                rb.AddForce(horizontalVelocity * swimForce, ForceMode.Acceleration);
+
+                cooldownTimer = 0f;
+            }
+        }
+        Debug.Log(rb.velocity.magnitude);
+        // rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed);
+
+        if (rb.velocity.sqrMagnitude > 0.01f)
+        {
+            rb.AddForce(-rb.velocity * dragForce, ForceMode.Acceleration);
+        }
+
+        if (GameManager.instance.map != null && grabbing == false)
+        {
+            if (bButtonReference.action.IsPressed())
             {
-                rb.AddForce(-rb.velocity * dragForce, ForceMode.Acceleration);
-            }
-
-            if (GameManager.instance.map != null && grabbing == false){
-                if (bButtonReference.action.IsPressed()){
-                    if (!GameManager.instance.map.activeInHierarchy){
-                        GameManager.instance.map.SetActive(true);
-                    }
-                }
-                else
+                if (!GameManager.instance.map.activeInHierarchy)
                 {
-                    GameManager.instance.map.SetActive(false);
+                    GameManager.instance.map.SetActive(true);
                 }
             }
-            
+            else
+            {
+                GameManager.instance.map.SetActive(false);
+            }
+        }
+
     }
 
-    public void DelayedFalsifyGrabbing(){
+    public void DelayedFalsifyGrabbing()
+    {
         Invoke("FalsifyGrabbing", 1.5f);
     }
 
-    public void FalsifyGrabbing(){
+    public void FalsifyGrabbing()
+    {
         grabbing = false;
     }
 
-    private void OnTriggerEnter(Collider other) {
-        if (other.gameObject.tag == "Surface"){
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Surface")
+        {
             SurfaceControl();
         }
-        if (other.gameObject.tag == "Dive"){
+        if (other.gameObject.tag == "Dive")
+        {
             UnderwaterControl();
         }
 
@@ -126,14 +141,16 @@ public class Swimmer : MonoBehaviour
 
 
 
-    public void SurfaceControl(){
+    public void SurfaceControl()
+    {
         rb.useGravity = false;
         cc.enabled = true;
         collider.isTrigger = true;
         moveProvider.enabled = true;
     }
 
-    public void UnderwaterControl(){
+    public void UnderwaterControl()
+    {
         cc.enabled = false;
         collider.isTrigger = false;
         moveProvider.enabled = false;
